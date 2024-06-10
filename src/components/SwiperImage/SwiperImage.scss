@@ -1,0 +1,10 @@
+.swiper-img {
+	display: flex;
+	align-items: center;
+	gap: 45px;
+}
+.swiper-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

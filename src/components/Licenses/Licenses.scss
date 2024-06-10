@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+.licenses {
+	background-color: #bfdf72;
+	padding: clamp(2.5rem, 1.75rem + 3.75vw, 6.25rem) 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 455px;
+		height: 667px;
+		background-image: url('/icons/Licenses/decor2.svg');
+		background-repeat: no-repeat;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		right: -181px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 455px;
+		height: 636px;
+		background-image: url('/icons/Licenses/decor1.svg');
+		background-repeat: no-repeat;
+	}
+
+	&__title {
+		margin-bottom: clamp(0.5rem, 0.038rem + 2.31vw, 2.813rem);
+	}
+
+	&__subtitle {
+		font-size: clamp(0.75rem, 0.6rem + 0.75vw, 1.5rem);
+		margin-bottom: clamp(1.063rem, 0.275rem + 3.94vw, 5rem);
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(0.875rem, 0.55rem + 1.63vw, 2.5rem);
+		border-radius: 30px;
+		width: 100%;
+		max-width: 1300px;
+		padding: 40px 45px 70px 45px;
+		background-color: #fff;
+	}
+
+	&__form-title {
+		text-align: center;
+		font-size: clamp(0.625rem, 0.45rem + 0.88vw, 1.5rem);
+	}
+
+	&__form-buttons {
+		display: flex;
+		align-items: center;
+		gap: 39px;
+	}
+}

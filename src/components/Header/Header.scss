@@ -1,0 +1,57 @@
+@import '../../styles/variables.scss';
+
+.header {
+	display: flex;
+	flex-direction: column;
+
+	&__top {
+		display: flex;
+		background-color: $green;
+		align-items: center;
+		justify-content: space-between;
+		padding: clamp(0.875rem, 0.675rem + 1vw, 1.875rem)
+			clamp(0.875rem, 0.487rem + 1.94vw, 2.813rem);
+		font-weight: 600;
+
+		letter-spacing: 0.04em;
+		color: $white;
+	}
+
+	&__top-title {
+		font-weight: 600;
+		font-size: clamp(0.875rem, 0.65rem + 1.13vw, 2rem);
+		text-transform: uppercase;
+	}
+
+	&__top-phone {
+		color: inherit;
+		font-size: 24px;
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: clamp(0.875rem, 0.675rem + 1vw, 1.875rem)
+			clamp(0.875rem, 0.487rem + 1.94vw, 2.813rem);
+	}
+
+	&__bottom-list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 70px;
+		li {
+			cursor: pointer;
+			font-weight: 700;
+			font-size: 24px;
+
+			color: $black;
+			transition: color 0.2s ease-in-out;
+			&:hover {
+				color: $green;
+			}
+		}
+	}
+}
