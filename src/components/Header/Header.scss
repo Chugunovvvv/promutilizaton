@@ -9,8 +9,15 @@
 		background-color: $green;
 		align-items: center;
 		justify-content: space-between;
-		padding: clamp(0.875rem, 0.675rem + 1vw, 1.875rem)
-			clamp(0.875rem, 0.487rem + 1.94vw, 2.813rem);
+		// padding: clamp(0.875rem, 0.675rem + 1vw, 1.875rem)
+		// 	clamp(0.875rem, 0.487rem + 1.94vw, 2.813rem);
+		padding: 30px 40px;
+		@media (max-width: 1023px) {
+			padding: 20px 35px;
+		}
+		@media (max-width: 475px) {
+			padding: 20px;
+		}
 		font-weight: 600;
 
 		letter-spacing: 0.04em;
@@ -18,14 +25,18 @@
 	}
 
 	&__top-title {
+		color: inherit;
 		font-weight: 600;
-		font-size: clamp(0.875rem, 0.65rem + 1.13vw, 2rem);
+		font-size: clamp(1.225rem, 0.95rem + 0.88vw, 2rem);
 		text-transform: uppercase;
 	}
 
 	&__top-phone {
 		color: inherit;
 		font-size: 24px;
+		@media (max-width: 1023px) {
+			display: none;
+		}
 	}
 
 	&__bottom {
@@ -35,23 +46,90 @@
 		text-align: center;
 		padding: clamp(0.875rem, 0.675rem + 1vw, 1.875rem)
 			clamp(0.875rem, 0.487rem + 1.94vw, 2.813rem);
+		@media (max-width: 1023px) {
+			padding: 0;
+			// display: none;
+		}
 	}
-
+	&__bottom-nav {
+		@media (max-width: 1023px) {
+			position: absolute;
+			top: 0;
+			left: -100%;
+			background-color: #fff;
+			height: 100vh;
+			width: 100%;
+			z-index: 40;
+			flex-direction: column;
+			display: flex;
+			overflow: auto;
+			transition: left 0.1s ease-in-out;
+		}
+		&.active {
+			left: 0;
+		}
+	}
 	&__bottom-list {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 70px;
+		@media (max-width: 1440px) {
+			gap: 25px;
+		}
+		@media (max-width: 1023px) {
+			flex-direction: column;
+			margin: auto;
+			align-items: center;
+			gap: 0;
+		}
 		li {
 			cursor: pointer;
 			font-weight: 700;
 			font-size: 24px;
-
+			@media (max-width: 1440px) {
+				font-size: 20px;
+			}
+			@media (max-width: 1023px) {
+				font-size: 40px;
+				line-height: 100px;
+			}
+			@media (max-width: 475px) {
+				font-size: 34px;
+				line-height: 70px;
+			}
 			color: $black;
 			transition: color 0.2s ease-in-out;
+			a {
+				color: inherit;
+			}
 			&:hover {
 				color: $green;
 			}
+			&:active {
+				color: $green;
+			}
 		}
+	}
+}
+.header__burger-phone {
+	display: none;
+	color: inherit;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 24px;
+	@media (max-width: 1440px) {
+		font-size: 20px;
+	}
+	@media (max-width: 1023px) {
+		font-size: 40px;
+		line-height: 100px;
+	}
+	@media (max-width: 1023px) {
+		display: block;
+	}
+	@media (max-width: 475px) {
+		font-size: 30px;
+		line-height: 50px;
 	}
 }

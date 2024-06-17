@@ -1,15 +1,23 @@
+'use client'
 import React, { FC } from 'react'
 import MainButton from '../UI/MainButton/MainButton'
 import './Contacts.scss'
+import useModal from '@/hooks/useModal'
+import ModalApplication from '../Modals/ModalAplitcation/ModalApplication'
 
 const Contacts: FC = () => {
+	const { isOpen, handleCloseModal, handleOpenModal } = useModal()
 	return (
-		<section className='contacts'>
+		<section id='contacts' className='contacts'>
 			<h2 className='contacts__title title'>Контакты</h2>
 			<ul className='contacts__list'>
 				<li>
 					<h3 className='contacts__list-title'>Прайс</h3>
-					<MainButton text='Оставить заявку' className='button__applications' />
+					<MainButton
+						text='Оставить заявку'
+						className='button__applications'
+						onClick={handleOpenModal}
+					/>
 				</li>
 				<li>
 					<h3 className='contacts__list-title'>Адрес офиса</h3>
@@ -31,6 +39,7 @@ const Contacts: FC = () => {
 					</div>
 				</li>
 			</ul>
+			<ModalApplication isOpen={isOpen} onClose={handleCloseModal} />
 		</section>
 	)
 }

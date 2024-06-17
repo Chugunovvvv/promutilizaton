@@ -8,6 +8,9 @@
 	line-height: 125%;
 	letter-spacing: 0.04em;
 	border-radius: 15px;
+	&:disabled {
+		opacity: 0.6;
+	}
 }
 
 .button__contact-us {
@@ -23,32 +26,36 @@
 		color: $white;
 		background-color: transparent;
 	}
+	@media (max-width: 1023px) {
+		display: none;
+	}
+	@media (max-width: 1600px) {
+		padding: 12px 20px;
+		font-size: 20px;
+	}
+	@media (max-width: 768px) {
+		padding: 10px 15px;
+		font-size: 17px;
+	}
 }
 
 .button__applications {
 	font-weight: 600;
-	font-size: 32px;
-	padding: 30px;
+	font-size: 24px;
+	padding: 20px 30px;
 	color: $white;
 	background-color: $green;
 	transition: background-color 0.2s ease-in-out;
+
 	&:hover {
 		background-color: $greenButtonHover;
 	}
-}
-
-.button__add {
-	font-weight: 700;
-	font-size: 32px;
-	line-height: 119%;
-	color: #161616;
-	padding: clamp(0.375rem, 0.075rem + 1.5vw, 1.875rem)
-		clamp(0.781rem, 0.063rem + 3.59vw, 4.375rem);
-	border: 3px solid $borderGray;
-	border-radius: 20px;
-	background-color: $gray;
-	transition: background-color 0.2s ease-in-out;
-	&:hover {
-		background-color: #d9d9d9;
+	@media (max-width: 1600px) {
+		padding: 12px 20px;
+		font-size: 20px;
+	}
+	@media (max-width: 768px) {
+		padding: 10px 15px;
+		font-size: 17px;
 	}
 }

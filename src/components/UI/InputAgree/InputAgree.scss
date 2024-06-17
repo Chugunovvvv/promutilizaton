@@ -1,0 +1,14 @@
+.inputAgree {
+	font-size: clamp(0.925rem, 0.675rem + 0.25vw, 1.2rem);
+	color: #000;
+	label {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+	}
+	input {
+		width: 30px;
+		height: 15px;
+	}
+}

@@ -9,17 +9,19 @@ import SwiperImage from '../SwiperImage/SwiperImage'
 
 const AboutUs: FC = () => {
 	return (
-		<section className='aboutUs content'>
-			<h2 className='aboutUs__title title'>О нас</h2>
-			<div className='aboutUs__swiper'>
-				<Swiper spaceBetween={50} slidesPerView={1}>
-					{swiper_content.map(swiper => (
-						<SwiperSlide className='aboutUs__swiper-wrap' key={swiper.id}>
-							<p className='aboutUs__swiper-text'>{swiper.text}</p>
-							<SwiperImage image={swiper.image} />
-						</SwiperSlide>
-					))}
-				</Swiper>
+		<section id='about' className='aboutUs'>
+			<div className='aboutUs__container content'>
+				<h2 className='aboutUs__title title'>О нас</h2>
+				<div className='aboutUs__swiper'>
+					<Swiper spaceBetween={50} slidesPerView={1}>
+						{swiper_content.map(swiper => (
+							<SwiperSlide className='aboutUs__swiper-wrap' key={swiper.id}>
+								<p className='aboutUs__swiper-text'>{swiper.text}</p>
+								<SwiperImage image={swiper.image} />
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
 			</div>
 		</section>
 	)

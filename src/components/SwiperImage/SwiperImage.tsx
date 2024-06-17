@@ -8,10 +8,10 @@ const SwiperImage = ({ image }: any) => {
 	return (
 		<div className='swiper-img'>
 			<img
+				className='swiper-arrow-left arrow'
 				src='/icons/Swiper/ArrowButton.svg'
 				alt='Стрелочка назад'
 				onClick={() => swiper.slidePrev()}
-				style={{ cursor: 'pointer' }}
 			/>
 			<div className='swiper-image'>
 				<img src={image} alt='Картинка в слайдере' />
@@ -19,7 +19,7 @@ const SwiperImage = ({ image }: any) => {
 			<img
 				src='/icons/Swiper/ArrowButton.svg'
 				alt='Стрелочка вперед'
-				style={{ transform: 'rotate(180deg)', cursor: 'pointer' }}
+				className='swiper-arrow-right arrow'
 				onClick={() => swiper.slideNext()}
 			/>
 		</div>

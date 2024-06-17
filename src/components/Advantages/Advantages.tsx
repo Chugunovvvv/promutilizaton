@@ -4,7 +4,7 @@ import advantages from '@/utils/advantages'
 
 const Advantages: FC = () => {
 	return (
-		<section className='advantages content'>
+		<section id='advantages' className='advantages content'>
 			<h2 className='advantages__title title'>С нами выгодно работать</h2>
 			<ul className='advantages__list'>
 				{advantages.map(advantage => (

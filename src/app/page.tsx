@@ -8,9 +8,11 @@ import Process from '@/components/Process/Process'
 import Contacts from '@/components/Contacts/Contacts'
 import Footer from '@/components/Footer/Footer'
 
+import '../styles/global.scss'
+
 const Home: FC = () => {
 	return (
-		<>
+		<div className='wrapper'>
 			<Main />
 			<AboutUs />
 			<Advantages />
@@ -18,7 +20,7 @@ const Home: FC = () => {
 			<Process />
 			<Contacts />
 			<Footer />
-		</>
+		</div>
 	)
 }
 

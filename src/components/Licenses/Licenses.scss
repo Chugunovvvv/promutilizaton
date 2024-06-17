@@ -1,12 +1,20 @@
 @import '../../styles/variables.scss';
+
 .licenses {
 	background-color: #bfdf72;
-	padding: clamp(2.5rem, 1.75rem + 3.75vw, 6.25rem) 0;
+	padding: clamp(1.25rem, 0.25rem + 5vw, 6.25rem) 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	// overflow: hidden;
+	@media (max-width: 768px) {
+		padding: 70px 15px;
+	}
+	@media (max-width: 475px) {
+		padding: 20px 0;
+	}
 	&::before {
 		content: '';
 		position: absolute;
@@ -17,6 +25,13 @@
 		height: 667px;
 		background-image: url('/icons/Licenses/decor2.svg');
 		background-repeat: no-repeat;
+		@media (max-width: 1600px) {
+			left: -120px;
+		}
+		@media (max-width: 475px) {
+			height: 0;
+			width: 0;
+		}
 	}
 	&::after {
 		content: '';
@@ -28,14 +43,27 @@
 		height: 636px;
 		background-image: url('/icons/Licenses/decor1.svg');
 		background-repeat: no-repeat;
+		@media (max-width: 1600px) {
+			right: -309px;
+		}
+		@media (max-width: 475px) {
+			height: 0;
+			width: 0;
+		}
 	}
 
 	&__title {
 		margin-bottom: clamp(0.5rem, 0.038rem + 2.31vw, 2.813rem);
 	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
 	&__subtitle {
-		font-size: clamp(0.75rem, 0.6rem + 0.75vw, 1.5rem);
+		text-align: center;
+		font-size: clamp(1.1rem, 0.625rem + 1.56vw, 2.5rem);
 		margin-bottom: clamp(1.063rem, 0.275rem + 3.94vw, 5rem);
 	}
 
@@ -47,17 +75,47 @@
 		width: 100%;
 		max-width: 1300px;
 		padding: 40px 45px 70px 45px;
+		position: relative;
+		z-index: 10;
+		margin: 0 25px;
 		background-color: #fff;
+		@media (max-width: 1600px) {
+			padding: 27px 50px;
+			max-width: 900px;
+		}
+		@media (max-width: 768px) {
+			padding: 20px 40px;
+		}
+		@media (max-width: 475px) {
+			padding: 15px 20px;
+			border-radius: 0%;
+		}
 	}
 
 	&__form-title {
 		text-align: center;
-		font-size: clamp(0.625rem, 0.45rem + 0.88vw, 1.5rem);
+		font-size: clamp(1.1rem, 0.625rem + 1.56vw, 2.5rem);
 	}
 
 	&__form-buttons {
 		display: flex;
 		align-items: center;
+		button {
+			width: 100%;
+		}
 		gap: 39px;
+		@media (max-width: 768px) {
+			gap: 10px;
+
+			button {
+				font-size: 14px;
+			}
+		}
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
 	}
+}
+.licenses__form-input {
+	position: relative;
 }

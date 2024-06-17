@@ -1,5 +1,4 @@
 @import '../../styles/variables.scss';
-
 .main {
 	display: flex;
 	flex-direction: column;
@@ -7,12 +6,24 @@
 	justify-content: center;
 	text-align: center;
 	height: 100vh;
-	padding: clamp(3.063rem, 1.512rem + 7.75vw, 10.813rem) 0;
+	padding: 173px 0;
 	background-image: url('/images/Main/main-bg.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	// z-index: 1000;
+	// z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 
+	@media (max-width: 1024px) {
+		padding: 93px 0;
+		height: 100%;
+	}
 	&__title {
 		font-weight: 600;
 		font-size: clamp(1.375rem, 0.55rem + 4.13vw, 5.5rem);
@@ -36,4 +47,15 @@
 		bottom: 0;
 		left: 0;
 	}
+}
+.main::before,
+.main::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200%;
+	height: 100%;
+	opacity: 0.5;
+	z-index: -1; /* Убедитесь, что псевдоэлементы находятся за контентом */
 }

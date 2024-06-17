@@ -1,0 +1,37 @@
+.selectedWaster {
+	display: flex;
+	flex-direction: column;
+
+	gap: 10px;
+
+	li {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+		justify-content: space-between;
+		padding: 25px;
+		background-color: #eaeaea;
+		font-size: clamp(1rem, 0.75rem + 0.63vw, 1.5rem);
+		@media (max-width: 425px) {
+			gap: 10px;
+			padding: 17px;
+		}
+		span {
+			max-width: 533px;
+		}
+		@media (max-width: 425px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	&__delete {
+		font-size: 40px;
+		cursor: pointer;
+	}
+	&__wrap {
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

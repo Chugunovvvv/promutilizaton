@@ -6,16 +6,19 @@
 	align-items: center;
 	background-color: $black;
 	padding: 30px;
+	@media (max-width: 475px) {
+		padding: 15px;
+	}
 	&__politics {
 		font-weight: 400;
-		font-size: clamp(0.625rem, 0.45rem + 0.88vw, 1.5rem);
+		font-size: clamp(0.825rem, 0.45rem + 0.88vw, 1.5rem);
 		color: $white;
 	}
 
 	&__company {
 		font-weight: 600;
 		text-transform: uppercase;
-		font-size: clamp(0.75rem, 0.5rem + 1.25vw, 2rem);
+		font-size: clamp(0.85rem, 0.5rem + 1.25vw, 2rem);
 		letter-spacing: 0.04em;
 		color: $white;
 	}

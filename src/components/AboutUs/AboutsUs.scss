@@ -1,44 +1,86 @@
 @import '../../styles/variables.scss';
 
 .aboutUs {
-	padding: clamp(3.125rem, 1.938rem + 5.94vw, 9.063rem) 0;
+	padding: clamp(1.25rem, 0.25rem + 5vw, 6.25rem) 0px;
 	position: relative;
+	overflow: hidden;
+	z-index: 11;
 	&::after {
 		content: '';
 		position: absolute;
-		top: 0;
-		left: -100px;
-		width: 391px;
-		height: 244px;
+		top: -15px;
+		left: -70px;
+		width: 24.438rem;
+		height: 24.188rem;
 		background-image: url('/icons/AboutUs/decor2.svg');
 		background-repeat: no-repeat;
+		background-size: 100%;
+		z-index: -1;
+		@media (max-width: 1600px) {
+			top: -70px;
+			left: -70px;
+			width: 20rem;
+			height: 20rem;
+		}
+		@media (max-width: 1339px) {
+			width: 15rem;
+			top: -40px;
+			left: -50px;
+		}
+		@media (max-width: 875px) {
+			top: 0;
+			width: 17rem;
+		}
+		@media (max-width: 590px) {
+			width: 14rem;
+		}
+		@media (max-width: 475px) {
+			width: 0;
+			height: 0;
+		}
 	}
 	&::before {
 		content: '';
 		position: absolute;
-		right: -300px;
-		bottom: 0;
-		width: 391px;
-		height: 244px;
+		right: -80px;
+		bottom: -4px;
+		width: 24.438rem;
+		height: 31.188rem;
 		background-image: url('/icons/AboutUs/decor1.svg');
 		background-repeat: no-repeat;
+		background-size: 100%;
+		z-index: -1;
+		@media (max-width: 1600px) {
+			width: 20rem;
+			bottom: -80px;
+		}
+		@media (max-width: 1339px) {
+			width: 15rem;
+			bottom: -160px;
+		}
+		@media (max-width: 875px) {
+			width: 17rem;
+			bottom: 0;
+		}
+		@media (max-width: 590px) {
+			width: 15rem;
+		}
+		@media (max-width: 475px) {
+			width: 0;
+			height: 0;
+		}
 	}
+
 	&__title {
 		margin-bottom: clamp(1.125rem, 0.5rem + 3.13vw, 4.25rem);
 	}
 	&__swiper-text {
 		max-width: 712px;
-		font-size: clamp(0.75rem, 0.5rem + 1.25vw, 2rem);
+		font-size: clamp(1.063rem, 0.875rem + 0.94vw, 2rem);
 		line-height: 119%;
-		flex: 1;
 		color: $black;
-	}
-
-	&__swiper-img {
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+		@media (max-width: 875px) {
+			order: 2;
 		}
 	}
 	&__swiper-buttons {
@@ -51,4 +93,14 @@
 	display: flex;
 	align-items: center;
 	gap: 154px;
+	@media (max-width: 1600px) {
+		gap: 70px;
+	}
+	@media (max-width: 875px) {
+		flex-direction: column;
+		gap: 50px;
+	}
+	@media (max-width: 590px) {
+		gap: 30px;
+	}
 }

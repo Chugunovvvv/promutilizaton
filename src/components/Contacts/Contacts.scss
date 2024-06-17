@@ -1,7 +1,8 @@
 @import '../../styles/variables.scss';
 
 .contacts {
-	padding: clamp(1.313rem, 0.325rem + 4.94vw, 6.25rem) 0;
+	padding-top: clamp(1.25rem, 0.25rem + 5vw, 6.25rem);
+	padding-bottom: clamp(1.25rem, 0.25rem + 5vw, 6.25rem);
 	background: linear-gradient(
 			180deg,
 			rgba(38, 58, 8, 0.77) 0%,
@@ -14,33 +15,53 @@
 	color: $white;
 	&__title {
 		color: $white;
-		font-size: clamp(1.25rem, 0.7rem + 2.75vw, 4rem);
-		margin-bottom: 55px;
+		margin-bottom: clamp(2.063rem, 1.475rem + 2.94vw, 6rem);
 	}
 
 	&__list {
 		display: flex;
-		justify-content: space-between;
-		padding: 0 clamp(1.25rem, 0.188rem + 5.31vw, 6.563rem);
+		justify-content: center;
+		gap: 100px;
+		flex-wrap: wrap;
+		padding: 0 100px;
+		@media (max-width: 1600px) {
+			padding: 0 20px;
+		}
+		@media (max-width: 875px) {
+			gap: 50px;
+		}
+		@media (max-width: 475px) {
+			gap: 30px;
+		}
 		li {
 			max-width: 400px;
 			display: flex;
 			flex-direction: column;
+			text-align: center;
+			// justify-content: center;
 			align-items: center;
 			gap: 29px;
+
+			@media (max-width: 1600px) {
+				max-width: 235px;
+			}
+			@media (max-width: 475px) {
+				gap: 10px;
+			}
 		}
 	}
 
 	&__list-title {
 		font-weight: 600;
-		font-size: clamp(1.25rem, 1rem + 1.25vw, 2.5rem);
+		white-space: nowrap;
+		font-size: clamp(1.438rem, 1.225rem + 1.06vw, 2.5rem);
 	}
 
 	&__list-text {
 		font-weight: 500;
-		font-size: clamp(0.75rem, 0.5rem + 1.25vw, 2rem);
-
+		font-size: clamp(0.875rem, 0.65rem + 1.13vw, 2rem);
 		text-align: center;
+		line-height: 1.4;
 	}
 
 	&__list-socials {
@@ -50,7 +71,7 @@
 		a {
 			color: inherit;
 			font-weight: 500;
-			font-size: clamp(0.75rem, 0.5rem + 1.25vw, 2rem);
+			font-size: clamp(0.875rem, 0.65rem + 1.13vw, 2rem);
 			text-align: center;
 		}
 	}

@@ -1,0 +1,57 @@
+@import '../../../styles/variables.scss';
+
+.modal {
+	&__wrapper {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 100;
+		opacity: 0;
+		width: 100vw;
+		min-height: 100vh;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all 0.1s ease-in-out;
+
+		&.active {
+			visibility: visible;
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+
+	&__content {
+		background-color: $white;
+		padding: 40px 40px 20px 40px;
+		border-radius: 15px;
+		position: relative;
+		margin: 0 20px;
+		z-index: 101;
+		transform: scale(0.5);
+		transition: all 0.2s ease-in-out;
+		&.active {
+			transform: scale(1);
+		}
+		@media (max-width: 590px) {
+			padding: 20px 20px 15px 20px;
+		}
+	}
+}
+.modal-close {
+	position: absolute;
+	top: -14px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 70px;
+	cursor: pointer;
+	@media (max-width: 590px) {
+		font-size: 55px;
+	}
+}

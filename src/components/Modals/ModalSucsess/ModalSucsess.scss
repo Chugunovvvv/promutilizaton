@@ -1,0 +1,34 @@
+.modalSuccsess {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 20vh;
+	width: 100%;
+	color: #000;
+
+	gap: 20px;
+	@media (max-width: 425px) {
+		gap: 10px;
+		height: 18vh;
+	}
+	h2 {
+		font-size: 40px;
+		@media (max-width: 580px) {
+			font-size: 30px;
+		}
+		@media (max-width: 375px) {
+			font-size: 25px;
+		}
+	}
+
+	span {
+		font-size: 27px;
+		@media (max-width: 580px) {
+			font-size: 18px;
+		}
+		@media (max-width: 375px) {
+			font-size: 16px;
+		}
+	}
+}

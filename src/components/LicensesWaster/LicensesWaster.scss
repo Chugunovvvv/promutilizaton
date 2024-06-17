@@ -1,0 +1,50 @@
+.waster {
+	max-width: 100%;
+	position: absolute;
+	top: calc(100% + 12px);
+	left: 0;
+	max-height: 340px;
+	overflow-y: auto;
+	background-color: #fff;
+	padding: 10px 0;
+	border: 3px solid #d9d9d9;
+	border-radius: 30px;
+	width: 100%;
+	&__list {
+		display: flex;
+		flex-direction: column;
+
+		@media (max-width: 475px) {
+			gap: 15px;
+		}
+		li {
+			display: flex;
+			gap: 15px;
+			align-items: flex-start;
+			justify-content: space-between;
+			cursor: pointer;
+			padding: 25px;
+			font-size: clamp(0.975rem, 0.75rem + 0.63vw, 1.5rem);
+			&:hover {
+				background-color: #eaeaea;
+			}
+			span {
+				max-width: 533px;
+			}
+			@media (max-width: 475px) {
+				flex-direction: column;
+				gap: 10px;
+				padding: 7px 10px;
+			}
+		}
+	}
+
+	&__active {
+		background-color: #d6d2d2;
+	}
+	&__name {
+	}
+
+	&__code {
+	}
+}
