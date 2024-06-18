@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import { ILicenses } from '@/utils/licenses'
 import { EmailTemplate } from '@/components/EmailTemplate/EmailTemplate'
 
-const RESEND_TOKEN = process.env.RESEND_TOKEN
+const RESEND_TOKEN = process.env.NEXT_PUBLIC_RESEND_TOKEN
 
 const resend = new Resend(RESEND_TOKEN)
 

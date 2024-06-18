@@ -4,7 +4,7 @@ import './InputAgree.scss'
 interface IInputAgree {
 	name: string
 	value?: boolean
-	onChange: (e) => void
+	onChange: (e: any) => void
 }
 
 const InputAgree: FC<IInputAgree> = ({ name, value = true, onChange }) => {

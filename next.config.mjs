@@ -1,8 +1,7 @@
-/** @type {import('next').NextConfig} */
-// const path = require('path'),
 const nextConfig = {
+	output: 'export',
 	env: {
-		RESEND_TOKEN: process.env.RESEND_TOKEN,
+		NEXT_PUBLIC_RESEND_TOKEN: process.env.NEXT_PUBLIC_RESEND_TOKEN,
 	},
 }
 

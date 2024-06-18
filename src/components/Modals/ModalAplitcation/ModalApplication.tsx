@@ -8,7 +8,7 @@ import useForm from '@/hooks/useForm'
 import { IInitialState } from '@/types'
 import InputAgree from '@/components/UI/InputAgree/InputAgree'
 import ModalSucsess from '../ModalSucsess/ModalSucsess'
-
+//@ts-ignore
 interface IModalApplication {
 	isOpen: boolean
 	onClose: () => void
@@ -39,12 +39,6 @@ const ModalApplication: FC<IModalApplication> = ({ isOpen, onClose }) => {
 		return true
 	}
 
-	const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault()
-		if (validateForm()) {
-			setIsActive(true)
-		}
-	}
 	const submit = async (
 		e: React.FormEvent<HTMLFormElement>,
 		data: IInitialState

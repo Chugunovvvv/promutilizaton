@@ -31,7 +31,7 @@ const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
 					<h3>Выбранные отходы:</h3>
 					<ul className='emailTemplateWaste'>
 						{selectedWaste?.map(el => (
-							<li>
+							<li key={el.id}>
 								{el.code} - {el.name}, {el.quantity && <>{el.quantity} т.</>}
 							</li>
 						))}

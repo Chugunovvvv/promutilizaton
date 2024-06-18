@@ -3,7 +3,7 @@ import './NotFound.scss'
 
 const NotFoundError: FC = () => {
 	return (
-		<section className='notFound content'>
+		<section className='notFound'>
 			<h1>Страница не найдена</h1>
 		</section>
 	)
