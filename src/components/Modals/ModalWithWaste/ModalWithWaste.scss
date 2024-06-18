@@ -24,6 +24,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+		overflow-y: auto;
 		li {
 			display: flex;
 
@@ -45,6 +46,6 @@
 		gap: 15px;
 		flex-direction: column;
 		max-width: 530px;
-		font-size: clamp(0.875rem, 0.75rem + 0.63vw, 1.5rem);
+		font-size: clamp(1rem, 0.75rem + 0.63vw, 1.5rem);
 	}
 }

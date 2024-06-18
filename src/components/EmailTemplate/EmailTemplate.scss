@@ -1,0 +1,15 @@
+.emailTemplate {
+	font-size: 20px;
+	font-weight: 500;
+}
+.emailTemplateList {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.emailTemplateWaste {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: flex-start;
+}

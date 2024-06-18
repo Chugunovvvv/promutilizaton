@@ -23,7 +23,9 @@ const initialState: IInitialState = {
 }
 
 const ModalApplication: FC<IModalApplication> = ({ isOpen, onClose }) => {
-	const { handleChange, handleSubmit, formData } = useForm({ initialState })
+	const { handleChange, handleSubmit, formData, resetForm } = useForm({
+		initialState,
+	})
 	const [isActive, setIsActive] = useState<boolean>(false)
 	const handleActiveModal = () => {
 		setIsActive(false)
@@ -43,10 +45,31 @@ const ModalApplication: FC<IModalApplication> = ({ isOpen, onClose }) => {
 			setIsActive(true)
 		}
 	}
+	const submit = async (
+		e: React.FormEvent<HTMLFormElement>,
+		data: IInitialState
+	) => {
+		e.preventDefault()
+		if (validateForm()) {
+			setIsActive(true)
+		}
+		resetForm()
+		try {
+			await fetch('/api/email', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			})
+		} catch (error) {
+			console.log(error)
+		}
+	}
 	return (
 		<>
 			<ModalWrapper isOpen={isOpen} onClose={onClose}>
-				<form className='modalApplication' onSubmit={onSubmit}>
+				<form className='modalApplication' onSubmit={e => submit(e, formData)}>
 					<h3 className='modalApplication__title'>Оставить заявку</h3>
 					<div className='modalApplication__inputs'>
 						<Input

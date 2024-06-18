@@ -10,7 +10,7 @@ const SwiperImage = ({ image }: any) => {
 			<img
 				className='swiper-arrow-left arrow'
 				src='/icons/Swiper/ArrowButton.svg'
-				alt='Стрелочка назад'
+				alt='Пролистнуть назад'
 				onClick={() => swiper.slidePrev()}
 			/>
 			<div className='swiper-image'>
@@ -18,7 +18,7 @@ const SwiperImage = ({ image }: any) => {
 			</div>
 			<img
 				src='/icons/Swiper/ArrowButton.svg'
-				alt='Стрелочка вперед'
+				alt='Пролистнуть вперед'
 				className='swiper-arrow-right arrow'
 				onClick={() => swiper.slideNext()}
 			/>

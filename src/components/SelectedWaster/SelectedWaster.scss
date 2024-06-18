@@ -12,14 +12,14 @@
 		padding: 25px;
 		background-color: #eaeaea;
 		font-size: clamp(1rem, 0.75rem + 0.63vw, 1.5rem);
-		@media (max-width: 425px) {
+		@media (max-width: 475px) {
 			gap: 10px;
 			padding: 17px;
 		}
 		span {
 			max-width: 533px;
 		}
-		@media (max-width: 425px) {
+		@media (max-width: 475px) {
 			flex-direction: column;
 			align-items: flex-start;
 		}

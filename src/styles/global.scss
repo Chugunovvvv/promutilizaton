@@ -1,14 +1,11 @@
 @import './variables.scss';
 @import './nullstyle.scss';
 
-html {
-	scroll-behavior: smooth;
-}
 body {
 	background-color: $white;
+	scroll-behavior: smooth;
 	font-weight: 400;
 	font-size: 14px;
-	// overflow-x: hidden;
 }
 .wrapper {
 	min-height: 100%;
@@ -17,7 +14,6 @@ body {
 .title {
 	font-weight: 600;
 	font-size: clamp(1.925rem, 1.15rem + 2.38vw, 4rem);
-
 	letter-spacing: 0.04em;
 	color: $black;
 	text-align: center;
@@ -27,8 +23,6 @@ body {
 	max-width: 1732px;
 	margin: auto;
 	padding: 0 30px;
-
-	scroll-behavior: smooth;
 	@media (max-width: 475px) {
 		padding: 0 20px;
 	}

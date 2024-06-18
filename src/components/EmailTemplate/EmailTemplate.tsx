@@ -1,34 +1,43 @@
 import { ILicenses } from '@/utils/licenses'
+import './EmailTemplate.scss'
 
 interface EmailTemplateProps {
 	name: string
 	email?: string
-	comment?: string
+	commentary?: string
 	telephone: string
-	waste?: ILicenses[]
+	selectedWaste?: ILicenses[]
 }
 
 const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
 	name,
 	telephone,
 	email,
-	comment,
-	waste,
+	commentary,
+	selectedWaste,
 }) => {
 	return (
-		<div>
-			<p style={{ fontSize: '18px', fontWeight: '500' }}>
-				{name} заполнил(а) заявку на сайте, номер телефона: {telephone}, почта:{' '}
-				{!!email && email}, комментарий: {!!comment && comment}. Выбранные
-				отходы:{' '}
-				{!!waste &&
-					waste?.map(el => (
-						<span>
-							{el.name} - {el.code}
-						</span>
-					))}
-				{}
-			</p>
+		<div className='emailTemplate'>
+			<h2>Общие данные:</h2>
+			<ul className='emailTemplateList'>
+				<li>{name} заполнил(а) заявку на сайте</li>
+				<li>Номер телефона: {telephone}</li>
+				{email && <li>Почта: {email}</li>}
+				{commentary && <li>Комментарий: {commentary}.</li>}
+			</ul>
+
+			{selectedWaste?.length && (
+				<>
+					<h3>Выбранные отходы:</h3>
+					<ul className='emailTemplateWaste'>
+						{selectedWaste?.map(el => (
+							<li>
+								{el.code} - {el.name}, {el.quantity && <>{el.quantity} т.</>}
+							</li>
+						))}
+					</ul>
+				</>
+			)}
 		</div>
 	)
 }

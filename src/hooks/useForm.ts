@@ -1,11 +1,11 @@
 'use client'
 import { IInitialState } from '@/types'
-import { FormEvent, useState } from 'react'
+import { FC, FormEvent, useState } from 'react'
 
 const useForm = ({ initialState }) => {
 	const [formData, setFormData] = useState<IInitialState>(initialState)
 
-	const handleChange = (e: any) => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, type, value, checked } = e.target
 		setFormData(prevState => ({
 			...prevState,

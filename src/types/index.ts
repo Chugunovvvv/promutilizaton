@@ -1,3 +1,5 @@
+import { ILicenses } from '@/utils/licenses'
+
 export interface IInitialState {
 	name: string
 	phone: string
@@ -5,6 +7,7 @@ export interface IInitialState {
 	commentary?: string
 	checked: boolean
 	quantity?: string
+	waste?: ILicenses[]
 }
 
 export interface IModal {

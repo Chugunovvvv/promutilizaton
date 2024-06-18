@@ -1,5 +1,3 @@
-'use client'
-
 import React, { FC, useState } from 'react'
 import ModalWrapper from '../ModalWrapper/ModalWrapper'
 import Input from '@/components/UI/Input/Input'
@@ -21,7 +19,6 @@ const initialState: IInitialState = {
 	name: '',
 	phone: '',
 	checked: true,
-	quantity: '',
 }
 
 const ModalWithWaste: FC<IModalWithWaste> = ({
@@ -32,6 +29,16 @@ const ModalWithWaste: FC<IModalWithWaste> = ({
 	const { formData, handleChange, resetForm } = useForm({
 		initialState,
 	})
+	const [quantities, setQuantities] = useState<{ [key: string]: string }>({})
+	const handleQuantityChange = (
+		e: React.ChangeEvent<HTMLInputElement>,
+		id: string
+	) => {
+		setQuantities({
+			...quantities,
+			[id]: e.target.value,
+		})
+	}
 	const [isActive, setIsActive] = useState<boolean>(false)
 	const handleActiveModal = () => {
 		setIsActive(false)
@@ -45,19 +52,41 @@ const ModalWithWaste: FC<IModalWithWaste> = ({
 		return true
 	}
 
-	const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault()
+	const submit = async (
+		e: React.FormEvent<HTMLFormElement>,
+		data: IInitialState
+	) => {
+		e.preventDefault()
 		if (validateForm()) {
 			setIsActive(true)
 		}
 		resetForm()
-
-		console.log(formData)
+		try {
+			const requestData = {
+				...data,
+				quantity: data.quantity,
+				selectedWaste: selectedWaste.map(item => ({
+					id: item.id,
+					code: item.code,
+					name: item.name,
+					quantity: quantities[item.id],
+				})),
+			}
+			await fetch('/api/email', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(requestData),
+			})
+		} catch (error) {
+			console.log(error)
+		}
 	}
 	return (
 		<>
 			<ModalWrapper isOpen={isOpen} onClose={onClose}>
-				<form className='modalWithWaste' onSubmit={onSubmit}>
+				<form className='modalWithWaste' onSubmit={e => submit(e, formData)}>
 					<h2>Оставьте контактные данные и выберите количество отходов</h2>
 					<div className='modalWithWaste__inputs'>
 						<Input
@@ -96,8 +125,10 @@ const ModalWithWaste: FC<IModalWithWaste> = ({
 									placeholder='Количество отходов'
 									className='input__waste'
 									name='quantity'
-									value={formData.quantity}
-									onChange={handleChange}
+									value={quantities[selectedWaste.id] || ''}
+									onChange={e =>
+										handleQuantityChange(e, String(selectedWaste.id))
+									}
 									showUnit={true}
 								/>
 							</li>

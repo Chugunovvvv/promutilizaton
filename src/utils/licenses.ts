@@ -2,6 +2,7 @@ export interface ILicenses {
 	id: number
 	name: string
 	code: string
+	quantity?: string
 }
 
 const licenses: ILicenses[] = [
